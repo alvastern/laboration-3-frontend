@@ -23,9 +23,9 @@ async function loadWorkExperience () {
             <h3>${item.company_name}</h3>
             <p>${item.position}</p>
             <p>${item.location}</p>
-            <p>${item.start_date} - ${item.end_date}</p>
+            <p>${formatDate(item.start_date)} - ${formatDate(item.end_date)}</p>
             <p>${item.description}</p>
-            <button id="delete-button" data-id="${item.id}">Radera</button>
+            <button id="delete-button" data-id="${item._id}">Radera</button>
             `;
 
             experienceList.appendChild(li);
@@ -54,3 +54,8 @@ document.addEventListener("click", async (e) => {
 });
 
 loadWorkExperience();
+
+// Funktion för att formatera datum på ett sätt som jag vill
+function formatDate(dateString) {
+    return new Date(dateString).toLocaleDateString("sv-SE");
+}
