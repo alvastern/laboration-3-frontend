@@ -43,9 +43,8 @@ document.addEventListener("click", async (e) => {
         // Använder fetch och metoden DELETE för att radera en punkt
         try {
             await fetch(`${APIURL}/${id}`, {
-                method: "DELETE"
+                method: "DELETE"    
             });
-
             loadWorkExperience();
         } catch (error) {
             alert("Kunde inte radera posten")
